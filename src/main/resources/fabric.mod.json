@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "fake-player-api",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Fake Player API",
+  "description": "An API for mods to use fake players without the burden of implementing everything",
   "authors": [
-    "Me!"
+    "GabrielOlvH"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/CafeteriaGuild/fake-player-api",
+    "sources": "https://github.com/CafeteriaGuild/fake-player-api"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/fake-player-api/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "dev.cafeteria.fakeplayerapi.FakePlayerAPI"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "fake-player-api.mixins.json"
   ],
 
   "depends": {

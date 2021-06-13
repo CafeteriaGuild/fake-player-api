@@ -1,9 +1,23 @@
-# Fabric Example Mod
+# Fake Player API
 
-## Setup
+A small library to create Fake Players which also implements dummy packet handlers to avoid crashes and other stuff. yea
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+## Using Fake Player API
 
-## License
+You can add the library by inserting the following in your `build.gradle` :
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+```gradle
+repositories {
+    maven {
+        url = 'https://maven.cafeteria.dev'
+        content {
+            includeGroup 'dev.cafeteria'
+        }
+    }
+}
+
+dependencies {
+    modImplementation "dev.cafeteria:fake-player-api:x.y.z"
+    include "dev.cafeteria:fake-player-api:x.y.z"
+}
+```

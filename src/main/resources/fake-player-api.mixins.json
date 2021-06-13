@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.cafeteria.fakeplayerapi.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "MixinEntity",
+    "PlayerAdvancementTrackerMixin",
+    "ServerPlayerEntityAccessor",
+    "ServerPlayerEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
