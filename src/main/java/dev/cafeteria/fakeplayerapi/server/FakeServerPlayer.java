@@ -2,17 +2,18 @@ package dev.cafeteria.fakeplayerapi.server;
 
 import com.mojang.authlib.GameProfile;
 import dev.cafeteria.fakeplayerapi.mixin.ServerPlayerEntityAccessor;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 
 public class FakeServerPlayer extends ServerPlayerEntity {
 
-    private final FakePlayerFactory factory;
+    private final FakePlayerBuilder builder;
 
-    protected FakeServerPlayer(FakePlayerFactory factory, MinecraftServer server, ServerWorld world, GameProfile profile) {
+    protected FakeServerPlayer(FakePlayerBuilder builder, MinecraftServer server, ServerWorld world, GameProfile profile) {
         super(server, world, profile);
-        this.factory = factory;
+        this.builder = builder;
 
         this.networkHandler = new FakeServerPlayNetworkHandler(server, FakeClientConnection.SERVER_FAKE_CONNECTION, this);
 
@@ -20,7 +21,15 @@ public class FakeServerPlayer extends ServerPlayerEntity {
         ((ServerPlayerEntityAccessor) this).setStatHandler(new FakeServerStatHandler(server));
     }
 
-    public FakePlayerFactory getFactory() {
-        return factory;
+    public FakePlayerBuilder getBuilder() {
+        return builder;
+    }
+
+    @Override
+    public void tick() {
+    }
+
+    public boolean canBeTarget(LivingEntity otherEntity) {
+        return false;
     }
 }
