@@ -69,11 +69,11 @@ public class FakeServerPlayNetworkHandler extends ServerPlayNetworkHandler {
     }
 
     @Override
-    public void onStructureBlockUpdate(UpdateStructureBlockC2SPacket packet) {
+    public void onUpdateStructureBlock(UpdateStructureBlockC2SPacket packet) {
     }
 
     @Override
-    public void onJigsawUpdate(UpdateJigsawC2SPacket packet) {
+    public void onUpdateJigsaw(UpdateJigsawC2SPacket packet) {
     }
 
     @Override
@@ -81,7 +81,7 @@ public class FakeServerPlayNetworkHandler extends ServerPlayNetworkHandler {
     }
 
     @Override
-    public void onMerchantTradeSelect(SelectMerchantTradeC2SPacket packet) {
+    public void onSelectMerchantTrade(SelectMerchantTradeC2SPacket packet) {
     }
 
     @Override
@@ -161,7 +161,7 @@ public class FakeServerPlayNetworkHandler extends ServerPlayNetworkHandler {
     }
 
     @Override
-    public void onGameMessage(ChatMessageC2SPacket packet) {
+    public void onChatMessage(ChatMessageC2SPacket packet) {
     }
 
     @Override
@@ -201,7 +201,7 @@ public class FakeServerPlayNetworkHandler extends ServerPlayNetworkHandler {
     }
 
     @Override
-    public void onSignUpdate(UpdateSignC2SPacket packet) {
+    public void onUpdateSign(UpdateSignC2SPacket packet) {
     }
 
     @Override
@@ -209,7 +209,7 @@ public class FakeServerPlayNetworkHandler extends ServerPlayNetworkHandler {
     }
 
     @Override
-    public void onPlayerAbilities(UpdatePlayerAbilitiesC2SPacket packet) {
+    public void onUpdatePlayerAbilities(UpdatePlayerAbilitiesC2SPacket packet) {
     }
 
     @Override
