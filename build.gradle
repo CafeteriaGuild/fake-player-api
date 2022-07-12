@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.10-SNAPSHOT'
+	id 'fabric-loom' version '0.12-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -79,6 +79,8 @@ publishing {
 
 	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
 	repositories {
+		// Temporary response
+		/*
 		maven {
 			url "https://maven.cafeteria.dev/releases"
 			credentials {
@@ -89,5 +91,6 @@ publishing {
 				basic(BasicAuthentication)
 			}
 		}
+		*/
 	}
 }

@@ -29,10 +29,5 @@
   "depends": {
   },
   "suggests": {
-  },
-  "custom": {
-    "modmenu": {
-      "badges": [ "library" ]
-    }
   }
 }
