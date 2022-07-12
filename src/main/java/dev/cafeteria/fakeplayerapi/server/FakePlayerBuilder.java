@@ -1,9 +1,11 @@
 package dev.cafeteria.fakeplayerapi.server;
 
 import com.mojang.authlib.GameProfile;
+import net.minecraft.network.encryption.PlayerPublicKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 
@@ -30,11 +32,11 @@ public class FakePlayerBuilder {
         return builderId;
     }
 
-    public FakeServerPlayer create(MinecraftServer server, ServerWorld world, GameProfile profile) {
-        return factory.create(this, server, world, profile);
+    public FakeServerPlayer create(MinecraftServer server, ServerWorld world, GameProfile profile, @Nullable PlayerPublicKey publicKey) {
+        return factory.create(this, server, world, profile, publicKey);
     }
 
-    public FakeServerPlayer create(MinecraftServer server, ServerWorld world, String name) {
-        return factory.create(this, server, world, new GameProfile(UUID.randomUUID(), name));
+    public FakeServerPlayer create(MinecraftServer server, ServerWorld world, String name, @Nullable PlayerPublicKey publicKey) {
+        return factory.create(this, server, world, new GameProfile(UUID.randomUUID(), name), publicKey);
     }
 }
