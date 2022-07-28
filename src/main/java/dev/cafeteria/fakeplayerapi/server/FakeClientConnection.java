@@ -3,6 +3,7 @@ package dev.cafeteria.fakeplayerapi.server;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
+import net.minecraft.class_7648;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.NetworkSide;
 import net.minecraft.network.NetworkState;
@@ -50,7 +51,7 @@ public class FakeClientConnection extends ClientConnection {
     }
 
     @Override
-    public void send(Packet<?> packet, @Nullable GenericFutureListener<? extends Future<? super Void>> callback) {
+    public void send(Packet<?> packet, @Nullable class_7648 arg) {
     }
 
     @Override
