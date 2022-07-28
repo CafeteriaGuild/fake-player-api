@@ -2,6 +2,7 @@ package dev.cafeteria.fakeplayerapi.server;
 
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
+import net.minecraft.class_7648;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.c2s.play.*;
@@ -153,7 +154,7 @@ public class FakeServerPlayNetworkHandler extends ServerPlayNetworkHandler {
     }
 
     @Override
-    public void sendPacket(Packet<?> packet, @Nullable GenericFutureListener<? extends Future<? super Void>> listener) {
+    public void sendPacket(Packet<?> packet, @Nullable class_7648 arg) {
     }
 
     @Override
