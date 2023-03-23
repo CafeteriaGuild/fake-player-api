@@ -4,6 +4,7 @@
   "package": "dev.cafeteria.fakeplayerapi.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "ClientConnectionAccessor",
     "EntityMixin",
     "TargetPredicateMixin",
     "PlayerAdvancementTrackerMixin",

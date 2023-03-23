@@ -1,8 +1,8 @@
 package dev.cafeteria.fakeplayerapi.server;
 
+import dev.cafeteria.fakeplayerapi.mixin.ClientConnectionAccessor;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.util.concurrent.Future;
-import io.netty.util.concurrent.GenericFutureListener;
+import io.netty.channel.embedded.EmbeddedChannel;
 import net.minecraft.class_7648;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.NetworkSide;
@@ -20,6 +20,7 @@ public class FakeClientConnection extends ClientConnection {
 
     public FakeClientConnection(NetworkSide side) {
         super(side);
+        ((ClientConnectionAccessor) this).setChannel(new EmbeddedChannel());
     }
 
     @Override

@@ -81,10 +81,10 @@ publishing {
 	repositories {
 		maven {
 			url "https://maven.cafeteria.dev/releases"
-			credentials {
-				username = project.property("mcdUsername")
-				password = project.property("mcdPassword")
-			}
+			//credentials {
+			//	username = project.property("mcdUsername")
+			//	password = project.property("mcdPassword")
+			//}
 			authentication {
 				basic(BasicAuthentication)
 			}
