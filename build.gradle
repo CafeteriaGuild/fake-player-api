@@ -79,15 +79,19 @@ publishing {
 
 	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
 	repositories {
-		maven {
-			url "https://maven.cafeteria.dev/releases"
-			credentials {
-				username = project.property("mcdUsername")
-				password = project.property("mcdPassword")
+		if (project.hasProperty("mcdUsername") && project.hasProperty("mcdPassword")) {
+			maven {
+				url "https://maven.cafeteria.dev/releases"
+				credentials {
+					username = project.property("mcdUsername")
+					password = project.property("mcdPassword")
+				}
+				authentication {
+					basic(BasicAuthentication)
+				}
 			}
-			authentication {
-				basic(BasicAuthentication)
-			}
+		} else {
+			println("Repo credentials not present, not configuring publishing repositories.")
 		}
 	}
 }
