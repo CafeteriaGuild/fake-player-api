@@ -14,7 +14,7 @@ public class FakeServerPlayer extends ServerPlayerEntity {
     private final FakePlayerBuilder builder;
 
     protected FakeServerPlayer(FakePlayerBuilder builder, MinecraftServer server, ServerWorld world, GameProfile profile) {
-        super(server, world, profile, null);
+        super(server, world, profile);
         this.builder = builder;
 
         this.networkHandler = new FakeServerPlayNetworkHandler(server, FakeClientConnection.SERVER_FAKE_CONNECTION, this);

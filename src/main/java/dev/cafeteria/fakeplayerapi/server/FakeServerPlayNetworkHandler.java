@@ -1,12 +1,9 @@
 package dev.cafeteria.fakeplayerapi.server;
 
-import io.netty.util.concurrent.Future;
-import io.netty.util.concurrent.GenericFutureListener;
-import net.minecraft.class_7648;
 import net.minecraft.network.ClientConnection;
-import net.minecraft.network.Packet;
+import net.minecraft.network.PacketCallbacks;
+import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.c2s.play.*;
-import net.minecraft.network.packet.s2c.play.PlayerPositionLookS2CPacket;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -102,19 +99,7 @@ public class FakeServerPlayNetworkHandler extends ServerPlayNetworkHandler {
     }
 
     @Override
-    public void requestTeleportAndDismount(double x, double y, double z, float yaw, float pitch) {
-    }
-
-    @Override
     public void requestTeleport(double x, double y, double z, float yaw, float pitch) {
-    }
-
-    @Override
-    public void requestTeleport(double x, double y, double z, float yaw, float pitch, Set<PlayerPositionLookS2CPacket.Flag> flags) {
-    }
-
-    @Override
-    public void requestTeleport(double x, double y, double z, float yaw, float pitch, Set<PlayerPositionLookS2CPacket.Flag> flags, boolean shouldDismount) {
     }
 
     @Override
@@ -149,12 +134,14 @@ public class FakeServerPlayNetworkHandler extends ServerPlayNetworkHandler {
     public void onDisconnected(Text reason) {
     }
 
+
     @Override
     public void sendPacket(Packet<?> packet) {
     }
 
     @Override
-    public void sendPacket(Packet<?> packet, @Nullable class_7648 arg) {
+    public void sendPacket(Packet<?> packet, @Nullable PacketCallbacks callbacks) {
+        super.sendPacket(packet, callbacks);
     }
 
     @Override

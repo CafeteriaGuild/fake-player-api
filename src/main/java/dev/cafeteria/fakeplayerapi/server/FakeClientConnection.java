@@ -3,12 +3,12 @@ package dev.cafeteria.fakeplayerapi.server;
 import dev.cafeteria.fakeplayerapi.mixin.ClientConnectionAccessor;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.embedded.EmbeddedChannel;
-import net.minecraft.class_7648;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.NetworkSide;
 import net.minecraft.network.NetworkState;
-import net.minecraft.network.Packet;
+import net.minecraft.network.PacketCallbacks;
 import net.minecraft.network.listener.PacketListener;
+import net.minecraft.network.packet.Packet;
 import net.minecraft.text.Text;
 import org.jetbrains.annotations.Nullable;
 
@@ -52,9 +52,9 @@ public class FakeClientConnection extends ClientConnection {
     }
 
     @Override
-    public void send(Packet<?> packet, @Nullable class_7648 arg) {
+    public void send(Packet<?> packet, @Nullable PacketCallbacks callbacks) {
+        super.send(packet, callbacks);
     }
-
     @Override
     public void tick() {
     }
@@ -77,8 +77,8 @@ public class FakeClientConnection extends ClientConnection {
     }
 
     @Override
-    public boolean hasChannel() {
-        return false;
+    public boolean isChannelAbsent() {
+        return true;
     }
 
     @Override

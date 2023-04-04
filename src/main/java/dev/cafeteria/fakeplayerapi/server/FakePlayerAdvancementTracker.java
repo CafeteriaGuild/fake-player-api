@@ -15,7 +15,7 @@ import java.io.File;
 public class FakePlayerAdvancementTracker extends PlayerAdvancementTracker {
 
     public FakePlayerAdvancementTracker(ServerPlayerEntity owner) {
-        super(null, null, null, FabricLoader.getInstance().getConfigDir().toFile(), owner);
+        super(null, null, null, FabricLoader.getInstance().getConfigDir().toFile().toPath(), owner);
     }
 
     @Override

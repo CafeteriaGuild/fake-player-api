@@ -13,7 +13,14 @@ public record FakePacketListener(ClientConnection connection) implements PacketL
     }
 
     @Override
-    public ClientConnection getConnection() {
-        return connection;
+    public boolean isConnectionOpen() {
+        return true;
     }
+
+    @Override
+    public boolean shouldCrashOnException() {
+        return PacketListener.super.shouldCrashOnException();
+    }
+
+
 }
